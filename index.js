@@ -7,7 +7,7 @@ import { studentRouter } from "./Routes/student.js";
 dotenv.config();
 
 const PORT = process.env.PORT
-const HOST = 'localhost';
+// const HOST = 'localhost';
 
 const app = express();
 
@@ -19,4 +19,4 @@ app.use("/mentors", mentorRouter);
 app.use("/students", studentRouter);
 
 
-app.listen(PORT, HOST, () => console.log(`server started in local host:${PORT}`));
+app.listen(PORT, () => console.log(`server started in local host:${PORT}`));
