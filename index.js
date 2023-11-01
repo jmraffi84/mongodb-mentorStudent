@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors"
 import { mentorRouter } from "./Routes/mentor.js";
 import { studentRouter } from "./Routes/student.js";
+import { userRouter } from "./Routes/user.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cors()) //to handle crossorigin error
 // application middleware
 app.use("/mentors", mentorRouter);
 app.use("/students", studentRouter);
+app.use("/user", userRouter)
 
 
 app.listen(PORT, () => console.log(`server started in local host:${PORT}`));
