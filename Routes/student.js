@@ -5,7 +5,7 @@ import { deleteStudent, editStudent, getAllStudent, postNewStudent } from "../co
 const router = express.Router();
 
 // get request
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
     try {
         if (req.query.students) {
             req.query.students = parent(req.query.students)

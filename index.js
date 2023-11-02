@@ -4,6 +4,7 @@ import cors from "cors"
 import { mentorRouter } from "./Routes/mentor.js";
 import { studentRouter } from "./Routes/student.js";
 import { userRouter } from "./Routes/user.js";
+import { isAuthenticated } from "./Routes/Authentication/userAuth.js";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(cors()) //to handle crossorigin error
 
 // application middleware
 app.use("/mentors", mentorRouter);
-app.use("/students", studentRouter);
+app.use("/students", isAuthenticated, studentRouter);
 app.use("/user", userRouter)
 
 
